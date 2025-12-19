@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "236719033020",
+    "project_id": "bdfuturama",
+    "storage_bucket": "bdfuturama.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236719033020:android:25d0c1639a90764de85eb9",
+        "android_client_info": {
+          "package_name": "com.example.estudio_p2_apis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFtAgsE2WaRHoD2gTc1zarW6EPLjmffjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

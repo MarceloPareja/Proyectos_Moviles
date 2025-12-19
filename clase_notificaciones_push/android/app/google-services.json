@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "97363854750",
+    "project_id": "bdmoviles-2352a",
+    "storage_bucket": "bdmoviles-2352a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97363854750:android:3a3b131c37bdbd2eb5828f",
+        "android_client_info": {
+          "package_name": "espe.pareja.marcelo.basedatos_firebase_moviles"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn_p4bqQpuhkcgUructu0VeTl7H4eIauE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97363854750:android:8a9b682568bce76db5828f",
+        "android_client_info": {
+          "package_name": "espe.pareja.marcelo.clase_notificaciones_push"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn_p4bqQpuhkcgUructu0VeTl7H4eIauE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
