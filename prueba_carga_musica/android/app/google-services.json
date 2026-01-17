@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "236719033020",
+    "project_id": "bdfuturama",
+    "storage_bucket": "bdfuturama.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236719033020:android:b0d3b9b96d60000fe85eb9",
+        "android_client_info": {
+          "package_name": "com.example.estudio_notificaciones_p2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFtAgsE2WaRHoD2gTc1zarW6EPLjmffjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236719033020:android:7e1af5fc5585286ce85eb9",
+        "android_client_info": {
+          "package_name": "com.example.exam_2_pareja"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFtAgsE2WaRHoD2gTc1zarW6EPLjmffjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236719033020:android:8da94e0fd2e89a71e85eb9",
+        "android_client_info": {
+          "package_name": "com.mycompany.flutterinventory1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFtAgsE2WaRHoD2gTc1zarW6EPLjmffjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236719033020:android:35d7901c2fc1eb6ce85eb9",
+        "android_client_info": {
+          "package_name": "espe.pareja.marcelo.examen_pareja_correcion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFtAgsE2WaRHoD2gTc1zarW6EPLjmffjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236719033020:android:506b04d73ca6aa5be85eb9",
+        "android_client_info": {
+          "package_name": "espe.pareja.marcelo.prueba_carga_musica"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFtAgsE2WaRHoD2gTc1zarW6EPLjmffjg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
