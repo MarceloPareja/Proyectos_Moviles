@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "903185850213",
+    "project_id": "ai-test-scan",
+    "storage_bucket": "ai-test-scan.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903185850213:android:bbf816a32269f6bd1a4b8c",
+        "android_client_info": {
+          "package_name": "espe.pareja.marcelo.app_escaneo_pruebas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0R0xpiqNR5rGcThQvM2KQ-CS9m3vIK3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:903185850213:android:161879eb51109f1b1a4b8c",
+        "android_client_info": {
+          "package_name": "espe.pareja.marcelo.testscanner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0R0xpiqNR5rGcThQvM2KQ-CS9m3vIK3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

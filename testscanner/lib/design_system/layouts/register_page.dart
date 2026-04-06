@@ -1,0 +1,180 @@
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import '../../data/services/profesor_service.dart';
+
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
+
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
+  final _nameController = TextEditingController();
+
+  final ProfesorService _service=ProfesorService();
+
+  bool _isLoading = false;
+  String? _errorMessage;
+
+  Future<void> _register() async {
+    final email = _emailController.text.trim();
+    final name=_nameController.text.trim();
+    final password = _passwordController.text.trim();
+    final confirmPassword = _confirmPasswordController.text.trim();
+
+    if (email.isEmpty || password.isEmpty || name.isEmpty) {
+      setState(() => _errorMessage = 'Completa todos los campos');
+      return;
+    }
+
+    if (password != confirmPassword) {
+      setState(() => _errorMessage = 'Las contraseñas no coinciden');
+      return;
+    }
+
+    if (password.length < 6) {
+      setState(() => _errorMessage = 'La contraseña debe tener al menos 6 caracteres');
+      return;
+    }
+
+    setState(() {
+      _isLoading = true;
+      _errorMessage = null;
+    });
+
+    final success = await _service.register(
+      email, name, password
+    );
+
+    if (!mounted) return;
+
+    setState(() => _isLoading = false);
+
+    if (success) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Registro exitoso. Ya puede iniciar sesión'),
+          backgroundColor: Colors.green,
+        ),
+      );
+      context.go('/login');
+    } else {
+      setState(() {
+        _errorMessage = 'No se pudo registrar. ¿El correo electrónico ya fue registrado?';
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Crear cuenta', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+      ),
+      body: SafeArea(
+        child: Center(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(
+                  Icons.person,
+                  size: 40,
+                  color: Colors.black,
+                ),
+                const SizedBox(height: 24),
+                TextField(
+                  controller: _emailController,
+                  decoration: const InputDecoration(
+                    labelText: 'Correo electrónico',
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.account_circle_outlined),
+                  ),
+                  textInputAction: TextInputAction.next,
+                ),
+                TextField(
+                  controller: _nameController,
+                  decoration: const InputDecoration(
+                    labelText: 'Nombre completo',
+                    helperText: "Este nombre se imprimirá en las pruebas",
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.person),
+                  ),
+                  textInputAction: TextInputAction.next,
+                ),
+                const SizedBox(height: 16),
+                TextField(
+                  controller: _passwordController,
+                  decoration: const InputDecoration(
+                    labelText: 'Contraseña',
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.lock),
+                  ),
+                  obscureText: true,
+                  textInputAction: TextInputAction.next,
+                ),
+                const SizedBox(height: 16),
+                TextField(
+                  controller: _confirmPasswordController,
+                  decoration: const InputDecoration(
+                    labelText: 'Confirmar contraseña',
+                    border: OutlineInputBorder(),
+                    prefixIcon: Icon(Icons.lock_outline),
+                  ),
+                  obscureText: true,
+                ),
+                const SizedBox(height: 24),
+                if (_errorMessage != null)
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 16),
+                    child: Text(
+                      _errorMessage!,
+                      style: const TextStyle(color: Colors.red, fontSize: 14),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                SizedBox(
+                  width: double.infinity,
+                  height: 50,
+                  child: ElevatedButton.icon(
+                    onPressed: _isLoading ? null : _register,
+                    icon: _isLoading
+                        ? const SizedBox(
+                      width: 20,
+                      height: 20,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
+                        : const Icon(Icons.how_to_reg),
+                    label: Text(
+                      _isLoading ? 'Registrando...' : 'Crear cuenta',
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                TextButton(
+                  onPressed: () => context.go('/login'),
+                  child: const Text('¿Ya tienes cuenta? Inicia sesión'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    _confirmPasswordController.dispose();
+    _nameController.dispose();
+    super.dispose();
+  }
+}
